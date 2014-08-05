@@ -10,7 +10,7 @@ public class Person {
 	private String name;
 	
 	@Autowired
-	private List<Car> cars;
+	private List<Car> cars; //  list 列表注入
 	public String getName() {
 		return name;
 	}
