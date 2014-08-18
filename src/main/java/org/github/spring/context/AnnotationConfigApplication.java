@@ -1,6 +1,7 @@
 package org.github.spring.context;
 
 import java.util.List;
+import java.util.Map;
 
 import org.github.spring.context.domain.Car;
 import org.github.spring.context.domain.Person;
@@ -19,7 +20,14 @@ public class AnnotationConfigApplication {
 			person.setName("doctor");
 			System.out.println(person.getName());
 			List<Car> cars = person.getCars();
+			System.out.println(cars.getClass().getName());
 			System.out.println(cars);
+			
+			System.out.println("////////////////////////////");
+			Map<String, Car> mapCars = person.getMapCars();
+			for (String car : mapCars.keySet()) {
+				System.out.println(car + " : " + mapCars.get(car));
+			}
 		}
 		
 		applicationContext.close();
